@@ -33,11 +33,8 @@ module.exports = function(RED) {
 	var userServices = services['iotf-service-staging'];
 
 	if(userServices === null || userServices === undefined) {
-		for(var key in services) {
-			if(/iotf-service.*/.test(key))
-			userServices = services [key];
-			} 
-		}
+		userServices = services	['iotf-service-dedi'];
+	}
 
 	if(userServices === null || userServices === undefined) {
 	     userServices = services	['user-provided'];
